@@ -1,18 +1,18 @@
 <?php
-/* @var $this CargosController */
+/* @var $this IglesiasController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Cargos',
+	'Iglesias',
 );
 
 $this->menu=array(
-	array('label'=>'Crear Cargos', 'url'=>array('create')),
-	array('label'=>'Administrar Cargos', 'url'=>array('admin')),
+	array('label'=>'Agregar Iglesia', 'url'=>array('create')),
+	array('label'=>'Administrar Iglesia', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Lista de Cargos</h1>
+<h1>Catálogo de Iglesias</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

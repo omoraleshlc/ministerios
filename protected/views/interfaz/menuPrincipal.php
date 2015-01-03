@@ -1,6 +1,10 @@
 <?php 
 $ip=NULL;
 /*
+ #$criteria = new CDbCriteria();
+                    #$criteria->condition = 'keyC = '.$fildID;
+                    #$criteria->group = 'UserId';
+                    #$count = Iglesias::Model()->count($criteria);
 $siteSima=substr($_SERVER['REMOTE_ADDR'],0,3);
 $siteFinanciero=substr($_SERVER['REMOTE_ADDR'],0,3);
 
@@ -167,7 +171,7 @@ $watermark_options  = array(
 
 <div class="barra_separadora">
      
-     <span ><small>Módulos Generales</small></span>
+     <span ><small>Catálogos Generales</small></span>
      
 </div>
 
@@ -203,7 +207,21 @@ $watermark_options  = array(
                   <img height="50" src="./images/i_miembros.jpeg" width="68" data-src="holder.js/64x64" alt="">
                   <div class="caption" align="center">
                     <small>Miembros de Iglesia</small>                
+                  <br>
+                    <?php
+                    $sql = "SELECT COUNT(*) FROM miembros";
+                    $numMiembros = Yii::app()->db->createCommand($sql)->queryScalar();
+                    ?>
                     
+                    <?php if($numMiembros>0){?>
+                  <span class="badge">
+                  <?php
+                  echo $numMiembros;
+                  ?>
+                  </span>
+                    <?php } ?>  
+
+
                   </div>
                 </div>
                   
@@ -231,13 +249,26 @@ $watermark_options  = array(
                 
                 <li></li>
                 
-                <a href="index.php?r=reports">  
+                <a href="index.php?r=iglesias">  
               <li class="span2">
                   
                 <div id="3" class="thumbnail" onmouseover="javascript:cambiarBorde('3');" onmouseout="normal('3');">
                   <img height="50" src="./images/i_iglesias.png" width="68" data-src="holder.js/64x64" alt="">
                   <div class="caption" align="center">
-                    <small>Iglesias</small>                
+                    <small>Iglesias</small>   
+                    <br>
+                    <?php
+                    $sql = "SELECT COUNT(*) FROM iglesias";
+                    $numIglesias = Yii::app()->db->createCommand($sql)->queryScalar();
+                    ?>
+                    
+                    <?php if($numIglesias>0){?>
+                  <span class="badge">
+                  <?php
+                  echo $numIglesias;
+                  ?>
+                  </span>
+                    <?php } ?>  
                     
                   </div>
                 </div>
@@ -245,15 +276,131 @@ $watermark_options  = array(
               </li>
                 </a>
                 
+                
+                <li></li>
+                
+                <a href="index.php?r=grupos">  
+              <li class="span2">
+                  
+                <div id="4" class="thumbnail" onmouseover="javascript:cambiarBorde('4');" onmouseout="normal('4');">
+                  <img height="50" src="./images/i_grupos.jpeg" width="68" data-src="holder.js/64x64" alt="">
+                  <div class="caption" align="center">
+                    <small>Grupos/Clases</small>                
+                   <br>
+                    <?php
+                    $sql = "SELECT COUNT(*) FROM grupos";
+                    $numGrupos = Yii::app()->db->createCommand($sql)->queryScalar();
+                    ?>
+                    
+                    <?php if($numGrupos>0){?>
+                  <span class="badge">
+                  <?php
+                  echo $numGrupos;
+                  ?>
+                  </span>
+                    <?php } ?>   
+                  </div>
+                </div>
+                  
+              </li>
+                </a>                
+                
+
+                <li></li>
+                
+                <a href="index.php?r=cargos">  
+              <li class="span2">
+                  
+                <div id="5" class="thumbnail" onmouseover="javascript:cambiarBorde('5');" onmouseout="normal('5');">
+                  <img height="50" src="./images/i_posicion.jpeg" width="68" data-src="holder.js/64x64" alt="">
+                  <div class="caption" align="center">
+                    <small>Cargos Eclesíasticos</small>                
+                    <br>
+                    <?php
+                    $sql = "SELECT COUNT(*) FROM cargos";
+                    $numCargos = Yii::app()->db->createCommand($sql)->queryScalar();
+                    ?>
+                    
+                    <?php if($numCargos>0){?>
+                  <span class="badge">
+                  <?php
+                  echo $numCargos;
+                  ?>
+                  </span>
+                    <?php } ?>  
+                  </div>
+                </div>
+                  
+              </li>
+                </a>     
+                
+                
+                
+                
+                
+                
+                
+                
+                
                
             </ul>
           </div>
           
           
 
-          
+        
+<div class="barra_separadora">
+     
+     <span ><small>Catálogos Secundarios</small></span>
+     
+</div>
+
+
+   
+<br>  
 
 
 
 
        
+          <div class="row-fluid" >
+            <ul class="thumbnails">
+               
+
+                <a href="index.php?r=clubes">  
+              <li class="span2">
+                  
+                <div id="6" class="thumbnail" onmouseover="javascript:cambiarBorde('6');" onmouseout="normal('6');">
+                  <img height="50" src="./images/i_clubes.jpeg" width="68" data-src="holder.js/64x64" alt="">
+                  <div class="caption" align="center">
+                    <small>Clubes</small>                
+                   <br>
+                    <?php
+                    $sql = "SELECT COUNT(*) FROM clubes";
+                    $numClubes = Yii::app()->db->createCommand($sql)->queryScalar();
+                    ?>
+                    
+                    <?php if($numClubes>0){?>
+                  <span class="badge">
+                  <?php
+                  echo $numClubes;
+                  ?>
+                  </span>
+                    <?php } ?>   
+                  </div>
+                </div>
+                  
+              </li>
+                </a>                 
+                
+                
+                
+                
+                
+                
+                
+                
+               
+            </ul>
+          </div>
+                          

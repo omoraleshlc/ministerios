@@ -1,6 +1,6 @@
 <?php
 
-class CargosController extends Controller
+class GruposController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,16 +62,16 @@ class CargosController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Cargos;
+		$model=new Grupos;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Cargos']))
+		if(isset($_POST['Grupos']))
 		{
-			$model->attributes=$_POST['Cargos'];
+			$model->attributes=$_POST['Grupos'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->keyCargos));
+				$this->redirect(array('view','id'=>$model->keyGrupos));
 		}
 
 		$this->render('create',array(
@@ -91,11 +91,11 @@ class CargosController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Cargos']))
+		if(isset($_POST['Grupos']))
 		{
-			$model->attributes=$_POST['Cargos'];
+			$model->attributes=$_POST['Grupos'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->keyCargos));
+				$this->redirect(array('view','id'=>$model->keyGrupos));
 		}
 
 		$this->render('update',array(
@@ -122,7 +122,7 @@ class CargosController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Cargos');
+		$dataProvider=new CActiveDataProvider('Grupos');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class CargosController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Cargos('search');
+		$model=new Grupos('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Cargos']))
-			$model->attributes=$_GET['Cargos'];
+		if(isset($_GET['Grupos']))
+			$model->attributes=$_GET['Grupos'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class CargosController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Cargos the loaded model
+	 * @return Grupos the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Cargos::model()->findByPk($id);
+		$model=Grupos::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class CargosController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Cargos $model the model to be validated
+	 * @param Grupos $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='cargos-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='grupos-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

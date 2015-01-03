@@ -1,18 +1,18 @@
 <?php
-/* @var $this CargosController */
+/* @var $this GruposController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Cargos',
+	'Grupos',
 );
 
 $this->menu=array(
-	array('label'=>'Crear Cargos', 'url'=>array('create')),
-	array('label'=>'Administrar Cargos', 'url'=>array('admin')),
+	array('label'=>'Crear Grupos', 'url'=>array('create')),
+	array('label'=>'Administrar Grupos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Lista de Cargos</h1>
+<h1>Lista de Grupos/Clases</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
