@@ -200,7 +200,7 @@ $watermark_options  = array(
               
                 
                 
-                <a href="index.php?r=umControlAlumnos">  
+                <a href="index.php?r=miembros">  
               <li class="span2">
                   
                 <div id="1" class="thumbnail" onmouseover="javascript:cambiarBorde('1');" onmouseout="normal('1');">

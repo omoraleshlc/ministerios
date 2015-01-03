@@ -27,12 +27,12 @@ class Grupos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('descripcion, nombreLider, fecha', 'required'),
+			array('descripcion, nombreLider', 'required'),
 			array('descripcion', 'length', 'max'=>200),
 			array('nombreLider', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('keyGrupos, descripcion, nombreLider, fecha', 'safe', 'on'=>'search'),
+			array('descripcion, nombreLider', 'safe', 'on'=>'search'),
 		);
 	}
 

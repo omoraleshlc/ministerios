@@ -25,11 +25,7 @@
 		<?php echo $form->error($model,'descripcion'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'iglesia'); ?>
-		<?php echo $form->textField($model,'iglesia'); ?>
-		<?php echo $form->error($model,'iglesia'); ?>
-	</div>
+
         
         <div class="row"> 
              <?php //echo $form->labelEx($model,'País de Nacimiento'); ?>
@@ -44,7 +40,7 @@
                            'type' => 'POST',
                            'url' => CController::createUrl('CombosDependientes/dynamicMunicipios'),
                            'update' => '#CombosDependientes_codMunicipio'
-                       ),'prompt' => 'País de Nacimiento...'
+                       ),'prompt' => 'Iglesia a donde pertenece...'
                  )
              );
        ?>
@@ -52,7 +48,7 @@
         </div>    
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
